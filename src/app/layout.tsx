@@ -83,10 +83,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="dns-prefetch" href="https://awards.infcdn.net" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap" />
         
 
 
@@ -94,6 +93,9 @@ export default function RootLayout({
         <link rel="preload" as="style" href="/css/824db010a7f7a3f8.css" />
         <link rel="preload" as="style" href="/deferred-styles.css" />
         <link rel="preload" as="style" href="https://awards.infcdn.net/circ5_n.css" />
+        
+        {/* Critical inline CSS for immediate rendering */}
+        <style dangerouslySetInnerHTML={{ __html: ultraCriticalCSS }} />
 
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -125,6 +127,13 @@ export default function RootLayout({
               css4.media = 'print';
               css4.onload = function() { this.media = 'all'; };
               document.head.appendChild(css4);
+              
+              var fonts = document.createElement('link');
+              fonts.rel = 'stylesheet';
+              fonts.href = 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap';
+              fonts.media = 'print';
+              fonts.onload = function() { this.media = 'all'; };
+              document.head.appendChild(fonts);
             })();
           `
         }} />
@@ -134,11 +143,8 @@ export default function RootLayout({
           <link rel="stylesheet" href="/css/824db010a7f7a3f8.css" />
           <link rel="stylesheet" href="https://awards.infcdn.net/circ5_n.css" />
           <link rel="stylesheet" href="/deferred-styles.css" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap" />
         </noscript>
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap" />
-
-        <style dangerouslySetInnerHTML={{ __html: ultraCriticalCSS }} />
         <script dangerouslySetInnerHTML={{
           __html: `
             (function() {

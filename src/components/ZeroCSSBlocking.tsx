@@ -7,7 +7,7 @@ const ultraCriticalCSS = `
 /* Reset and base */
 *,::before,::after{box-sizing:border-box;border-width:0}
 html,body{margin:0;padding:0}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;font-display:swap}
 h1,h2,p{margin:0}
 button{font:inherit;cursor:pointer;border:0;background:0 0}
 :root{--bg:#fff;--fg:#000}
